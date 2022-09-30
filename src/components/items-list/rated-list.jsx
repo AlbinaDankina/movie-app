@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 import { Rate } from 'antd';
 import { useContext } from 'react';
 
-import './item2.css';
+import '../item/item2.css';
 import { truncateName, truncate } from '../../logics/truncate-text';
 import { findMatchedGenres, onPostRate } from '../service/fetch-data';
 import { MovieContext } from '../service/movie-context';

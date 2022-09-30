@@ -32,9 +32,7 @@ const App = () => {
     saveGuestSessionId();
     getGenres(setGenres);
 
-    // if(localStorage.getItem('stars')) {
-    //   setStars(JSON.parse(localStorage.getItem('stars')))
-    // }; 
+    
 
   }, []);
   
@@ -59,19 +57,17 @@ const App = () => {
       <>
         <Input searchMovie={searchMovie} setInput={setInput} input={input} />
         
-        {movies.length !== 0 && !loading ? <ItemsList movies={movies} loading={loading} 
-        // stars={stars} 
-        // onUpdateStars={onUpdateStars} 
-        /> 
-                             : movies.length === 0 && !loading ? <Alert message="Nothing found. Please try again" type="info" />
-                             : <Spinner /> }
+        {movies.length !== 0 && !loading ? <ItemsList movies={movies} /> 
+         : movies.length === 0 && !loading ? <Alert message="Nothing found. Please try again" type="info" />
+         : <Spinner /> }
 
         <Pagination defaultCurrent={1} size="small" onChange={pagination} total={totalPages} hideOnSinglePage/>
       </>
     )},
+
     { label: 'Rated', key: 'item-2', children: (
      <>
-      { ratedFilm.length !== 0 ? <RatedList movies={ratedFilm} loading={loading}  /> : <Spinner /> }
+      { ratedFilm.length !== 0 ? <ItemsList movies={ratedFilm} loading={loading}  /> : <Spinner /> }
      </>
     )}
   ];
