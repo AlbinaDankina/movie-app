@@ -33,7 +33,7 @@ const MovieCard = ({item}) => {
         <li key={item.id} className="item">
           
           <img src={`https://image.tmdb.org/t/p/original${item.poster_path}`} alt="no poster available" />
-          <div>{item.id}</div>
+         
           <div className="item_info">
             <h1>{truncateName(item.title)}</h1>
             {item.release_date ? <h3>{format(new Date(item.release_date), 'MMM dd, yyyy')}</h3> : null}        
